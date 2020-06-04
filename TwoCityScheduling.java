@@ -11,12 +11,11 @@ class Solution {
         Collections.sort(costList);
         
         int total = 0;
-        for (int i = 0; i < n; i++) {
-            if (i < n/2) {
-                total += costList.get(i).A;
-            } else {
-                total += costList.get(i).B;
-            }
+        for (int i = 0; i < n/2; i++) {
+            total += costList.get(i).A;
+        }
+        for (int i = n/2; i < n; i++) {
+            total += costList.get(i).B;
         }
         
         return total;
