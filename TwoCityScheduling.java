@@ -4,9 +4,9 @@ class Solution {
     public int twoCitySchedCost(int[][] costs) {
         
         int n = costs.length;
-        List <PersosFlyCost> costList = new ArrayList<>();
+        List <PersonFlyCost> costList = new ArrayList<>();
         for (int i = 0; i < n; i++) {
-            costList.add(new PersosFlyCost(costs[i][0], costs[i][1]));
+            costList.add(new PersonFlyCost(costs[i][0], costs[i][1]));
         }
         Collections.sort(costList);
         
@@ -23,18 +23,18 @@ class Solution {
     }
 }
 
-class PersosFlyCost implements Comparable <PersosFlyCost> {
+class PersonFlyCost implements Comparable <PersonFlyCost> {
 
     int A;
     int B;
 
-    PersosFlyCost(int A, int B) {
+    PersonFlyCost(int A, int B) {
         this.A = A;
         this.B = B;
     }
 
     @Override
-    public int compareTo(PersosFlyCost other) {
+    public int compareTo(PersonFlyCost other) {
         return Integer.compare((this.A - this.B), (other.A - other.B));
     }
 }
